@@ -4,7 +4,7 @@ The steps to add the Warpwire Sakai plugin to a Sakai 11 instance are as follows
 
 1. Locate the ```<sakai-installation-location>/webapps/portal-render/vm/<skin>/includeStandardHead.vm``` file in your Sakai instance, where ```<skin>``` is the current skin in use for Sakai – in the default Sakai installation, this is the ‘neoskin’
 
-2. Within the ```includeStandardHead.vm``` file, locate the closing ```</head>`` tag, and add the following line immediately preceeding the ```</head>``` tag:  
+2. Within the ```includeStandardHead.vm``` file, locate the closing ```</head>``` tag, and add the following line immediately preceeding the ```</head>``` tag:  
 
      ```<script type="text/javascript" language="JavaScript" src="/portal/scripts/warpwire.js"></script>```
 
