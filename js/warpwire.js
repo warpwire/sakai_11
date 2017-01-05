@@ -1,6 +1,6 @@
 /**********************************************************************
 //
-// Warpwire Sakai Plugin 1.8.3
+// Warpwire Sakai Plugin 1.8.4
 //
 // Copyright 2016 Warpwire, Inc Licensed under the
 //  Educational Community License, Version 2.0 (the "License"); you may
@@ -17,7 +17,7 @@
 //	
 **********************************************************************/
 
-$(function(){
+(function($){
 	
 	// append url arguments to a given url
 	var addUrlArgument = function(url, key, value) {
@@ -51,7 +51,7 @@ $(function(){
 
 	var displayIframeContent = function(doc) {
 		// add allowfullscreen to the outer iframe container
-		$(window.top.document).find(".portletMainWrap iframe").each(function(key, element){
+		$(window.top.document).find("[class$=--sakai-warpwire] iframe").each(function(key, element){
     		$(element).attr('allowfullscreen','allowfullscreen');
   		});
 
@@ -61,7 +61,7 @@ $(function(){
 		if((typeof wwSakaiTool == 'undefined') || (wwSakaiTool.length <= 0)) {
 
 			// installed warpwire tool does not exist - look for external tool installations
-			wwSakaiTool = $(".menuTitle");
+			wwSakaiTool = $("[class$=__menuitem--title]");
 			var wwSakaiToolLongText = {};
 			$.each(wwSakaiTool, function(key, value){
 				if($(value).html().trim().toLowerCase().indexOf('warpwire') >= 0){
@@ -76,7 +76,7 @@ $(function(){
 			if((typeof wwSakaiTool == 'undefined') || (wwSakaiTool.length <= 0))
 				wwToolExists = false;
 		}
-	
+
 		var authCheck = false;
 		// find any embedded Warpwire content
 	    $(doc).find("span._ww_iframe_embed").each(function(index, div){
@@ -120,7 +120,10 @@ $(function(){
 						iframeAuth.attr('width', '1px');
 						iframeAuth.attr('style', 'left: -9999px; position: absolute;');
 						iframeAuth.attr('src', wwSakaiTool.parent().attr('href'));
-						$(div).append(iframeAuth);
+						setTimeout(function(){
+							$(div).append(iframeAuth);
+						},1000);
+						
 						authCheck = true;
 						// remove login iframe after enough time has passed to login
 						var removeLoginIframe = setTimeout(function(){
@@ -147,7 +150,9 @@ $(function(){
 				iframeAuth.attr('width', '1px');
 				iframeAuth.attr('style', 'left: -9999px; position: absolute;');
 				iframeAuth.attr('src', wwSakaiTool.parent().attr('href'));
-				$(div).append(iframeAuth);
+				setTimeout(function(){
+					$(div).append(iframeAuth);
+				},1000);
 				authCheck = true;
 				// remove login iframe after enough time has passed to login
 				var removeLoginIframe = setTimeout(function(){
@@ -163,4 +168,4 @@ $(function(){
 	$(document).ready(function(){
 		getIframes(this);
 	});
-});
+})($PBJQ);

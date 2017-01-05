@@ -1,6 +1,6 @@
 /**********************************************************************
 //
-// Warpwire Sakai Plugin 1.8.3
+// Warpwire Sakai Plugin 1.8.4
 //
 // Copyright 2015 Warpwire, Inc Licensed under the
 //  Educational Community License, Version 2.0 (the "License"); you may
@@ -216,7 +216,7 @@ CKEDITOR.plugins.add( 'warpwire', {
 				var editorPath = pluginEditor.path.replace(/(\/)+$/g,'');
 				editorPath = window.location.origin + editorPath.replace(window.location.origin, '');
 
-				var child = window.open(editor.config.warpwireURL.replace(/(\/)+$/g,'')+'/p/checkGroup?uniqueId='+uniqueId+"&externalContext=sakai_1_8_3&pluginLaunchReturnUrl="+encodeURIComponent(editorPath+"/html/warpwire.html")+"&pluginId="+pluginEditor.pluginId,'_wwPlugin','width=400, height=500');
+				var child = window.open(editor.config.warpwireURL.replace(/(\/)+$/g,'')+'/p/checkGroup?uniqueId='+uniqueId+"&externalContext=sakai_1_8_4&pluginLaunchReturnUrl="+encodeURIComponent(editorPath+"/html/warpwire.html")+"&pluginId="+pluginEditor.pluginId,'_wwPlugin','width=400, height=500');
 				
 				var leftDomain = false;
 		    var interval = setInterval(function() {
@@ -262,7 +262,7 @@ CKEDITOR.plugins.add( 'warpwire', {
 			label: 'Insert Warpwire',
 			command: 'insertWarpwire',
 			toolbar: 'warpwire',
-			icon: pluginEditor.path.replace(/(\/)+$/g,'')+'/images/icon-warpwire-integration.gif'
+			icon: pluginEditor.path.replace(/(\/)+$/g,'')+'/images/icon-warpwire-integration-black.gif'
 		});
 	}
 });
