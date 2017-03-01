@@ -51,7 +51,7 @@
 
 	var displayIframeContent = function(doc) {
 		// add allowfullscreen to the outer iframe container
-		$(window.top.document).find("[class$=--sakai-warpwire] iframe").each(function(key, element){
+		$(window.top.document).find("[class*=-warpwire] iframe").each(function(key, element){
     		$(element).attr('allowfullscreen','allowfullscreen');
   		});
 
