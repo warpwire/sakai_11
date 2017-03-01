@@ -168,4 +168,4 @@
 	$(document).ready(function(){
 		getIframes(this);
 	});
-})($PBJQ);
+})($PBJQ || jQuery || $);
