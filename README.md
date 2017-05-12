@@ -2,7 +2,7 @@
 
 The steps to add the Warpwire Sakai plugin to a Sakai 11 instance are as follows:
 
-1. Locate the ```<sakai-installation-location>/webapps/portal-render/vm/<skin>/site.vm``` file in your Sakai instance, where ```<skin>``` is the current skin in use for Sakai – in the default Sakai installation, this is the ‘neoskin’
+1. Locate the the site.vm file in your Sakai instance. It will either be located at ```<sakai-installation-location>/webapps/sakai-portal-render-engine-impl/vm/<skin>/site.vm``` or ```<sakai-installation-location>/webapps/portal-render/vm/<skin>/site.vm```, where ```<skin>``` is the current skin in use for Sakai – in the default Sakai installation, this is the ‘neoskin’
 
 2. Within the ```site.vm``` file, locate the ```<script>$PBJQ = jQuery;</script>``` block, and add the following line immediately after the closing ```</script>``` tag:  
 
