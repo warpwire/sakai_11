@@ -1,4 +1,4 @@
-#Warpwire Sakai 11 Install Instructions
+# Warpwire Sakai 11 Install Instructions #
 
 The steps to add the Warpwire Sakai plugin to a Sakai 11 instance are as follows:
 
